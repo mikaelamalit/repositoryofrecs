@@ -1,0 +1,7 @@
+<h1>New Rec</h1>
+<%= simple_form_for @rec do |f| %>
+	<%= f.input :content, as: :text %>
+	<%= f.label :tag_list, "Tags (separated by commas)" %>
+  	<%= f.text_field :tag_list %><br/>
+	<%= f.submit %>
+<% end %>

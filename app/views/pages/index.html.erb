@@ -1,0 +1,12 @@
+<h1>All Recs</h1>
+<% if current_user != nil %>
+	<h2>Current User: <%= current_user.email %></h2>
+	<% end %>
+<% @recs.each do |rec| %>
+	<div class="well">
+	<p><%= rec.content %></p>
+	<small>by <%= rec.user.email %><br/>
+	Tags: <%= raw rec.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></small>
+	</div>
+<% end %>
+<div class="btn btn-info"><%= link_to 'Create A New Rec', recs_path %></div>

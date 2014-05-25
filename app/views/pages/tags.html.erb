@@ -1,0 +1,9 @@
+<h1>Tags</h1>
+<br/>
+<div id="tag_cloud">
+	<% tag_cloud @recs.tag_counts, %w[s m l] do |tag, css_class| %><br/>
+	<li><%= link_to tag.name, tag_path(tag.name), class: css_class %></li>
+	<% end %>
+</div>
+<br/>
+<div class="btn btn-info"><%= link_to 'Create New Rec', new_rec_path %></div>

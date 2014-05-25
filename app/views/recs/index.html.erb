@@ -1,0 +1,17 @@
+<h1>Recs of <%= current_user.email %></h1>
+<br/>
+<div id="tag_cloud">
+	Tags: <% tag_cloud @recs.tag_counts, %w[s m l] do |tag, css_class| %>
+	<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+	<% end %>
+</div>
+<br/>
+<% @recs.each do |rec| %>
+<div class="well">
+	<small><%= rec.posted_on %></small>
+	<p><%= rec.content %></p>
+	Tags: <%= raw rec.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><br/><br/>
+	<div class="btn btn-warning"><%= link_to 'Edit Rec', edit_rec_path(rec.id) %></div>
+	<div class="btn btn-danger"><%= link_to 'Delete Rec',rec, :method => :delete %></div></div>
+<% end %>
+<div class="btn btn-info"><%= link_to 'Create New Rec', new_rec_path %></div>

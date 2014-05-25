@@ -2,6 +2,10 @@ footer {
   font-size: 9px;
 }
 
+.navbar {
+  background-color: #ffd1dc!important;
+}
+
 #tag_cloud {
   line-height: 1.6em;
   .s { font-size: 0.8em; }
@@ -11,8 +15,12 @@ footer {
 .index {
   background-image: url('/assets/ROR.png');
 }
+
 body {
-  background-color: #b19cd9;
+  background-image: url('/assets/ROR.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-color: #ffd1dc;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 18px;
